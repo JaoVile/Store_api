@@ -4,9 +4,10 @@ version = "0.0.1"
 description = ""
 authors = ["Nayanna Nara <nayanna501@gmail.com>"]
 readme = "README.md"
+packages = [{include = "store"}] # <--- ADICIONE ESTA LINHA
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 fastapi = "^0.104.1"
 uvicorn = "^0.24.0.post1"
 pydantic = "^2.5.1"

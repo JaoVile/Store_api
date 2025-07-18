@@ -1,3 +1,5 @@
+# store/usecases/product.py
+
 from typing import List
 from uuid import UUID
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
@@ -10,8 +12,8 @@ from store.core.exceptions import NotFoundException
 
 class ProductUsecase:
     def __init__(self) -> None:
-        self.client: AsyncIOMotorClient = db_client.get()
-        self.database: AsyncIOMotorDatabase = self.client.get_database()
+        self.client = db_client.get()
+        self.database = self.client.get_database()
         self.collection = self.database.get_collection("products")
 
     async def create(self, body: ProductIn) -> ProductOut:
@@ -49,5 +51,5 @@ class ProductUsecase:
 
         return True if result.deleted_count > 0 else False
 
-
-product_usecase = ProductUsecase()
+# A LINHA ABAIXO FOI REMOVIDA
+# product_usecase = ProductUsecase()

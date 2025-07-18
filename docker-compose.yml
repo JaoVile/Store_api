@@ -2,10 +2,10 @@ version: '3'
 
 services:
   db:
-    image: 'zcube/bitnami-compat-mongodb'
+    image: mongo:latest
+    restart: always
     ports:
-      - 27017:27017
-    restart: on-failure
+      - "27017:27017"
     environment:
-      - MONGODB_ADVERTISED_HOSTNAME=localhost
-      - ALLOW_EMPTY_PASSWORD=yes
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
